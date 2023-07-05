@@ -6,7 +6,7 @@ load_search_data <- function() {
     
     data_pubmed <- c() 
     for (i in 1:length(pubmed)) {
-      data <- read.csv(paste0('search-data/',pubmed[i]))
+      data <- read.csv(paste0('data/search-data/',pubmed[i]))
       data_pubmed <- rbind(data_pubmed,data)
     }
     
@@ -22,7 +22,7 @@ load_search_data <- function() {
     
     data_wos <- c() 
     for (i in 1:length(wos)) {
-      data     <- read_excel(paste0('search-data/',wos[i]))
+      data     <- read_excel(paste0('data/search-data/',wos[i]))
       data_wos <- rbind(data_wos,data)
     }
     
@@ -38,7 +38,7 @@ load_search_data <- function() {
     
     data_sportd <- c() 
     for (i in 1:length(sportd)) {
-      data <- read.csv(paste0('search-data/',sportd[i]))
+      data <- read.csv(paste0('data/search-data/',sportd[i]))
       data_sportd <- rbind(data_sportd,data)
     }
     
