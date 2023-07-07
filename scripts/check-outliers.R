@@ -1,17 +1,12 @@
-# Test outliers
+# Perform sensitivity analysis: generate funnel plots and check for outliers
 
-library(meta)
-library(metafor)
-library(readxl)
-library(tidyverse)
-
+# Load data
 data <- read_excel('data/test_data.xlsx')
 data <- read.csv('/Users/stephanvanderzwaard/Projects/research/2022-CT-review/data/revmandata.csv')
 
-# Save image as png
-tiff(paste0("/Users/stephanvanderzwaard/Projects/research/2022-CT-review/results/FigureS16_",format(Sys.Date(),"%d%m%y"),".tiff"),
+# Generate funnel plots for sensitivity analysis: save image as png
+tiff(paste0("FigureS16_",format(Sys.Date(),"%d%m%y"),".tiff"),
      bg = "transparent", width = 8, height = 11, unit = "in", pointsize = 12, res = 1200)
-
 
 outlier_datas <- c()
 par(mfcol = c(5, 3), mar = c(4, 4, 1, 1))  # Set up a 2 x 2 plotting space
@@ -55,8 +50,6 @@ for (i in 1:3) {
      ma_model_1 <- rma(yi, vi, data = my_data, slab = my_data$study, mods = ~ 0 + subgroup)
      summary(ma_model_1)
      
-     #print(paste0("Threshold potential outliers: ",round(4/nrow(datas),2)))
-     
      if (outcome != 4) {
        funnel_asym <- regtest(ma_model_1)
        print(paste0("Publication bias: ",my_data$outcome[1]," - P=",round(funnel_asym$pval,3)))
@@ -77,25 +70,3 @@ for (i in 1:3) {
 }
 
 dev.off()
-
-
-outlier_datas %>% filter(is.infl==T & outcome != 'hypertrophy')
-
-
-
-
-
-funnel(ma_model_1, levels=c(95, 99),  shade=c("white", "gray60"), refline=0,pch=subgroup)
-
-
-
-forest(ma_model_1, slab = paste(my_data$study, as.character(my_data$year), sep = ", "))
-funnel(ma_model_1)
-boxplot(yi ~ test, data = my_data)
-
-x <- cooks.distance(ma_model_1)
-plot(x, type="o", pch=19, xlab="Observed Outcome", ylab="Cook's Distance")
-
-x <- residuals(ma_model_1, type="rstudent")
-plot(x, type="o", pch=19, xlab="Observed Outcome", ylab="Studentized residuals")
-
