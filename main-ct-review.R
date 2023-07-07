@@ -46,8 +46,8 @@
       source('scripts/generate_funnel_plot.R')
       source('scripts/show_data_fig1.R')
       source('scripts/create_fig2.R')
+      source('scripts/create_fig4.R')
       source('scripts/create_fig5.R')
-      source('scripts/create_fig6.R')
 
     
 # ------------------------------------------------------------------------------------------------------------------------ #
@@ -183,14 +183,15 @@
         data  <- data %>% filter(!c(`status used`==0 & `gender used`==0)) %>% arrange(study,desc(select_CT)) %>% group_by(study) %>% filter(row_number()==1) %>% select(1:5)
         create_fig2(data)
 
-      # Generate figure 3 & 4 via RevMan application
+      # Generate figure 3 via RevMan application
+
+      # Generate figure 4
+        data  <- read_excel('data/data for figure 4.xlsx')
+        create_fig4(data)
 
       # Generate figure 5
         data  <- read_excel('data/data for figure 5.xlsx')
         create_fig5(data)
 
-      # Generate figure 6
-        data  <- read_excel('data/data for figure 6.xlsx')
-        create_fig6(data)
-
-
+      # Generate figure 6 via RevMan application
+        
