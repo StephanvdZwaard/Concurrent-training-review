@@ -184,6 +184,7 @@
         create_fig2(data)
 
       # Generate figure 3 via RevMan application
+      # *SMD are calculated according to Hedges' adjusted g and effects are compared using the random effects model with inverse variance 
 
       # Generate figure 4
         data  <- read_excel('data/data for figure 4.xlsx')
@@ -194,4 +195,5 @@
         create_fig5(data)
 
       # Generate figure 6 via RevMan application
+      # *SMD are calculated according to Hedges' adjusted g and effects are compared using the random effects model with inverse variance 
         
