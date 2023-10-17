@@ -16,7 +16,7 @@ Concurrent training, resistance training, aerobic training, gender, V ̇O2max, m
 
 ### Full article 
 
-Can be accessed here: XXXX  
+Can be accessed here: [Concurrent Strength and Endurance Training: A Systematic Review and Meta-Analysis on the Impact of Sex and Training Status](https://link.springer.com/article/10.1007/s40279-023-01943-9)  
 
  <hr>
  
@@ -29,7 +29,7 @@ Can be accessed here: XXXX
 The aim of this study was to assess sex-specific differences in adaptations to concurrent strength and endurance training for strength, power, muscle hypertrophy and V ̇O2max in healthy adults. Secondly, we investigated how adaptations to concurrent training depend on strength and endurance training status. Such a systematic review and meta-analysis not only provides more insight into the concurrent training effects of various populations, but also highlights which populations may be underrepresented in the concurrent training literature.
 
 
-This project is a collaboration within the [Department of Human Movement Sciences](https://www.fgb.vu.nl) of the Vrije Universiteit Amsterdam.
+This project is a collaboration within the [Department of Human Movement Sciences](https://www.fgb.vu.nl) of the Vrije Universiteit Amsterdam and the [Department of Cardiology](https://www.amc.nl/web/specialismen/cardiologie/cardiologie-1/amc-heart-center-cardiology-and-cardio-thoracic-surgery-research.htm) of the Amsterdam Medical Center.
 
 
  <hr>
@@ -51,8 +51,8 @@ The main script is used to run the steps within the literature search, screening
  **Version:**      1.0                                                                                                        
  **R.version:**    4.2.1 (2022-10-31)                                                                                        
                                                                                                                           
- **Publication:**  ...      
- doi:              ...           
+ **Publication:**  [Concurrent Strength and Endurance Training: A Systematic Review and Meta-Analysis on the Impact of Sex and Training Status](https://link.springer.com/article/10.1007/s40279-023-01943-9)       
+ doi:              https://doi.org/10.1007/s40279-023-01943-9            
  <hr>      
  
 <h4> RStudio project </h4>
